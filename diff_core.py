@@ -4,7 +4,6 @@ def compare_csv(file1_path, file2_path, key_column=None):
     df1 = pd.read_csv(file1_path)
     df2 = pd.read_csv(file2_path)
 
-    # 如果 key_column 没传，就默认按第一列排序
     sort_col = key_column if key_column else df1.columns[0]
 
     if sort_col in df1.columns:
@@ -12,7 +11,6 @@ def compare_csv(file1_path, file2_path, key_column=None):
     if sort_col in df2.columns:
         df2 = df2.sort_values(by=sort_col)
 
-    # 合并并标记数据来源
     if key_column and key_column in df1.columns and key_column in df2.columns:
         merged = df1.merge(df2, on=key_column, how='outer', indicator=True)
     else:

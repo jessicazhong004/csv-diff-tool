@@ -9,7 +9,20 @@
     <form method="POST" enctype="multipart/form-data">
         <p>Select File 1: <input type="file" name="file1" required></p>
         <p>Select File 2: <input type="file" name="file2" required></p>
+        <label for="keyCol">Select key column:</label>
+        <select id="keyCol" name="keyCol">
+        <option value="id">id</option>
+        <option value="name">name</option>
+        <option value="email">email</option>
+        </select>
         <button type="submit">Compare</button>
     </form>
+    {% if show_download %}
+    <hr>
+    <h3>Download Results:</h3>
+    <p><a href="/download/file1">⬇️ Download Only in File1</a></p>
+    <p><a href="/download/file2">⬇️ Download Only in File2</a></p>
+    {% endif %}
+
 </body>
 </html>
