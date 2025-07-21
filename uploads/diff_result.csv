@@ -1,0 +1,13 @@
+Total rows only in File1: 2
+Total rows only in File2: 2
+
+Only in File1:
+id,name,value,_merge
+1,Alice,100,left_only
+3,Charlie,300,left_only
+
+
+Only in File2:
+id,name,value,_merge
+3,Charlie,350,right_only
+5,Eve,500,right_only
